@@ -16,12 +16,12 @@ import numpy as np
 from glob import glob
 import matplotlib.pyplot as plt
 from keras.layers import MaxPooling2D
-
+import scipy
 # ----------------------------------------------------------------------------------------------------------------------
 # LOADING IMAGES
 IMAGE_SIZE = [224, 224]
-train_path = 'Dataset/Train'
-test_path = 'Dataset/Test'
+train_path = 'G:/Machine Learning/Dataset/Train'
+test_path = 'G:/Machine Learning/Dataset/Test'
 # ----------------------------------------------------------------------------------------------------------------------
 # PREPROCESSING LAYER - IMAGENET WEIGHTS
 vgg = VGG19(input_shape=IMAGE_SIZE + [3], weights='imagenet', include_top=False)
@@ -32,7 +32,7 @@ for layer in vgg.layers:
     layer.trainable = False
 # ----------------------------------------------------------------------------------------------------------------------
 # GETTING CLASSES
-folders = glob('Dataset/Train/*')  # LOAD IN FUTURE THE IMAGES REQUIRED (BODY PARTS)
+folders = glob('G:/Machine Learning/Dataset/Train/*')  # LOAD IN FUTURE THE IMAGES REQUIRED (BODY PARTS)
 # ----------------------------------------------------------------------------------------------------------------------
 # LAYER 1 - FLATTENING THE OUTPUT OF VGG
 x = Flatten()(vgg.output)
@@ -52,9 +52,10 @@ train_datagen = ImageDataGenerator(rescale=1. / 255, shear_range=0.2, zoom_range
 
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 # ----------------------------------------------------------------------------------------------------------------------
-training_set = train_datagen.flow_from_directory('Dataset/Train', target_size=(224, 224), batch_size=32,
+training_set = train_datagen.flow_from_directory('G:/Machine Learning/Dataset/Train', target_size=(224, 224),
+                                                 batch_size=32,
                                                  class_mode='categorical')
-test_set = test_datagen.flow_from_directory('Dataset/Test', target_size=(224, 224), batch_size=32,
+test_set = test_datagen.flow_from_directory('G:/Machine Learning/Dataset/Test', target_size=(224, 224), batch_size=32,
                                             class_mode='categorical')
 # ----------------------------------------------------------------------------------------------------------------------
 # # MODEL - FROM SCRATCH
@@ -104,5 +105,5 @@ plt.legend()
 plt.show()
 plt.savefig('AccVal_acc')
 # ----------------------------------------------------------------------------------------------------------------------
-model.save('model_vgg2.h5')
+model.save('G:\Machine Learning\model_vgg2.h5')
 # ----------------------------------------------------------------------------------------------------------------------
