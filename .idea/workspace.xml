@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30134d3b-ff77-4179-b465-db9dd9918063" name="Changes" comment="fixup! Updates">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AccVal_acc.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ChurnData.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Cust_Segmentation.csv" beforeDir="false" />
@@ -15,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/cars_clus.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cell_samples.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/drug200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
